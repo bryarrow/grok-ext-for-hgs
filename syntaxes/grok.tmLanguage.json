@@ -2,28 +2,88 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "grok",
 	"patterns": [
-		{
-			"include": "#keywords"
+    	{
+			"comment": "Tab stops like $1, $2...",
+			"match": "units|\\bporous\\smedia|\\bsurface\\n|fracture|\\sdual\\s|\\bchannel|\\bet",
+			"name": "variable.grok"
 		},
 		{
-			"include": "#strings"
-		}
+			"comment": "Tab stops like $1, $2...",
+			"match": "\\ssolute|boundary condition",
+			"name": "variable.parameter.grok"
+		},
+		{
+			"comment": "Tab stops like $1, $2...",
+			"match": "txt|dat|mprops|etprops|fprops|dprops|oprops",
+			"name": "storage.grok"
+		},
+		{ "include": "#constant" },
+		{ "include": "#comment" },
+		{ "include": "#keywords" }
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.grok",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.grok",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.grok",
-					"match": "\\\\."
+					"comment": "certain repeating keywords",
+					"match": "[Nn]ew\\s|[Uu]se\\s|[Cc]lear\\s|[Cc]hoose\\s|[Cc]reate\\s|[Rr]ead\\s|end\\s",
+					"name": "keyword.grok"
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"begin": "\\A",
+					"comment": "problem description at the beginning of the grok file",
+					"end": "end title\\n",
+					"name": "comment.block.beginnig.grok",
+					"patterns": [
+						{
+							"match": ".+?(?=end\\s[Tt]itle)"
+						}
+					]
+				},
+				{
+					"begin": "[!]",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.grok"
+						}
+					},
+					"comment": "commented line",
+					"end": "$\\n?",
+					"name": "comment.line.grok",
+					"patterns": [
+						{
+							"match": "\\\\\\s*\\n"
+						}
+					]
+				},
+				{
+					"begin": "^[Ss]kip on",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.grok"
+						}
+					},
+					"comment": "comment between skip on and skip off",
+					"end": "^[Ss]kip off",
+					"name": "comment.block.grok",
+					"patterns": [
+						{
+							"match": "\\\\\\s*\\n"
+						}
+					]
+				}
+			]
+		},
+		"constant":{
+			"patterns": [
+				{
+					"comment": "numbers: decimal or exponential",
+					"match": "(\\b[0-9]*\\.*[0-9]*[ed][\\+\\-]*[0-9]+\\s|\\b[\\+\\-]?[0-9]\\.?[0-9]*\\s?)",
+					"name": "constant.numeric.grok"
 				}
 			]
 		}

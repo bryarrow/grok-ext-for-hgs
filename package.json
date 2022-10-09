@@ -1,0 +1,25 @@
+{
+  "name": "grok-ext-for-hgs",
+  "displayName": "grok ext for hgs",
+  "description": "The extension to add .grok file of hgs support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "grok",
+      "aliases": ["grok", "grok"],
+      "extensions": [".grok"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "grok",
+      "scopeName": "source.grok",
+      "path": "./syntaxes/grok.tmLanguage.json"
+    }]
+  }
+}

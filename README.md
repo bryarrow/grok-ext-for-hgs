@@ -7,13 +7,13 @@ This extension can do codehighlighting / 'syntax'-highlighting for HydroGeoSpher
 ## Features
 
 same as [offical repo](https://github.com/hydroclaus/hgs_grammar)
--everything between "Skip on" and "Skip off" is greyed out as a block comment;
--the "problem description" at the beginning is greyed out as a block comment;
--comments indicated by a "!" are greyed out (as comments);
--file endings (.txt, etc.) of input files are coloured;
--numbers are highlighted;
--domain names (porous medium, surface, etc.) are highlighted;
--certain keywords ('end', 'clear', 'choose') are highlighted
+- everything between "Skip on" and "Skip off" is greyed out as a block comment;
+- the "problem description" at the beginning is greyed out as a block comment;
+- comments indicated by a "!" are greyed out (as comments);
+- file endings (.txt, etc.) of input files are coloured;
+- numbers are highlighted;
+- domain names (porous medium, surface, etc.) are highlighted;
+- certain keywords ('end', 'clear', 'choose') are highlighted
 
 
 ## Known Issues

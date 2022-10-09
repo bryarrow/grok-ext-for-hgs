@@ -1,7 +1,7 @@
 {
   "name": "grok-ext-for-hgs",
-  "displayName": "grok ext for hgs",
-  "description": "The extension to add .grok file of hgs support",
+  "displayName": "HydroGeoSphere Language Grammar VScode extension",
+  "description": "The extension  add HydroGeoSphere .grok file support ",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.72.0"

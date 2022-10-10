@@ -9,11 +9,6 @@
 		},
 		{
 			"comment": "Tab stops like $1, $2...",
-			"match": "\\ssolute|boundary condition",
-			"name": "variable.parameter.grok"
-		},
-		{
-			"comment": "Tab stops like $1, $2...",
 			"match": "txt|dat|mprops|etprops|fprops|dprops|oprops",
 			"name": "storage.grok"
 		},
@@ -24,6 +19,11 @@
 	"repository": {
 		"keywords": {
 			"patterns": [
+				{
+					"comment": "Tab stops like $1, $2...",
+					"match": "\\ssolute|boundary condition",
+					"name": "keyword.grok"
+				},
 				{
 					"comment": "certain repeating keywords",
 					"match": "[Nn]ew\\s|[Uu]se\\s|[Cc]lear\\s|[Cc]hoose\\s|[Cc]reate\\s|[Rr]ead\\s|end\\s",

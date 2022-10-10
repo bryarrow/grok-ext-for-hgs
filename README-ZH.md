@@ -2,7 +2,7 @@
 
 [ENGLISH](https://github.com/bryarrow/grok-ext-for-hgs)
 
-这是一个为HGS的grok文件提供语法高亮的插件
+这是一个为HydroGeoSphere的grok文件提供语法高亮的插件
 
 ## 功能特性
 
@@ -14,6 +14,7 @@
 - 数字高亮显示。
 - 领域名称（porous medium, surface等）高亮显示。
 - 关键字（"end", "clear", "choose"）高亮显示。
+- 与官方不同，本插件认为“solute” “boundary condition”属于关键字
 
 
 ## 已知问题

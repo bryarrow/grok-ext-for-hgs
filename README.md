@@ -13,7 +13,8 @@ same as [offical repo](https://github.com/hydroclaus/hgs_grammar)
 - file endings (.txt, etc.) of input files are coloured;
 - numbers are highlighted;
 - domain names (porous medium, surface, etc.) are highlighted;
-- certain keywords ('end', 'clear', 'choose') are highlighted
+- certain keywords ('end', 'clear', 'choose') are highlighted;
+- Unlike offical grammer ,this extension see 'solute' and 'boundary condition' as keywords
 
 
 ## Known Issues
